@@ -1,17 +1,20 @@
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-const menuClose = document.getElementById('menu-close'); 
-
-menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.add('top-[12%]');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.getElementById('menu-close');
+  
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('top-[6%]','opacity-100');
       menuToggle.classList.add('hidden');
       menuClose.classList.remove('hidden');
     });
     menuClose.addEventListener('click', () => {
-        mobileMenu.classList.remove('top-[12%]');
-        menuClose.classList.add('hidden');
-        menuToggle.classList.remove('hidden');
-      });
+      mobileMenu.classList.remove('top-[6%]','opacity-100');
+      menuClose.classList.add('hidden');
+      menuToggle.classList.remove('hidden');
+    });
+  });
+  
 
     // Scroll vers les sections
     document.querySelectorAll('.nav-link').forEach(link => {
