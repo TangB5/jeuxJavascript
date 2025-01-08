@@ -3,408 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>styliste</title>
-    <link rel="stylesheet" href="output.css">
+    <title>CV Builder</title>
+    <link href="output.css" rel="stylesheet">
     <style>
-
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
     </style>
 </head>
 <body>
-    <nav class="fixed z-50 flex justify-between w-full p-2 shadow-lg bg-slate-50">
-<div class="flex items-center">
-<img src="logo.png" alt="error" class="w-10 h-10 rounded-full md:ml-10">
-</div>
-<div class="hidden md:flex md:items-center ">
+    <h1 class="mt-10 text-3xl font-bold text-center">
+        Welcome to <span class="text-6xl text-red-500">CV</span><span class="text-slate-500"> Builder</span>
+    </h1>
+    <main class="flex justify-center w-full pt-10">
+        <section class="w-[80%] bg-gray-100 shadow-md flex flex-wrap">
+            <!-- Left Section: Personal Info & Skills -->
+            <div class="w-full md:w-[40%] p-5">
+                <div class="relative w-full overflow-hidden h-72">
+                    <div class="absolute w-[200px] h-[200px] left-[24.5%] top-[26.5%] hexagon border-4 border-red-500 bg-red-500">
+                        <img src="image.jpg" alt="Hexagon Image" class="object-cover w-full h-full hexagon">
+                    </div>
+                </div>
+                <div class="text-4xl font-bold text-center">MARIE REDIANE</div>
 
-    <ul class="md:flex md:mr-10 md:space-x-10  space-y-10 w-full  md:space-y-0 md:items-center  md:opacity-100 relative top-[15%]">
-        <li class="flex items-center justify-center w-full md:w-1/4"><a href="#home" class="capitalize text-slate-400 hover:font-bold hover:text-black hover:border-teal-200 duration-300 hover:border-b-[3px] hover:border-t-[3px] nav-link ">home</a></li>
-        <li class="flex items-center justify-center w-full md:w-1/4"><a href="#cathalog" class="capitalize text-slate-400 hover:font-bold hover:text-black hover:border-teal-200 duration-300 hover:border-b-[3px] hover:border-t-[3px] nav-link">catalog</a></li>
-        <li class="flex items-center justify-center w-full md:w-1/2"><a href="#about" class="capitalize text-slate-400 hover:font-bold hover:text-black hover:border-teal-200 duration-300 hover:border-b-[3px] hover:border-t-[3px] nav-link">about us</a></li>
-        <li class="flex items-center justify-center w-full md:w-1/4"><a href="#oder" class="capitalize text-slate-400 hover:font-bold hover:text-black hover:border-teal-200 duration-300 hover:border-b-[3px] hover:border-t-[3px] nav-link">order</a></li>
- 
-    </ul>
-</div>
-<div class="flex items-center md:hidden">
-    <div class="mr-4 menu" id="menu-toggle">
-<img src="image/icons/reorder-three.svg" alt="error" class="w-8 h-8">
-    </div>
-    <div class="hidden mr-4 back" id="menu-close">
-<img src="image/icons/close.svg" alt="error" class="w-8 h-8 ">
-    </div>
-</div>
-    </nav>
-    <div id="mobile-menu" class="fixed top-[-15%] left-0 z-40 w-full duration-500 ease-in-out bg-white shadow-lg md:hidden opacity-0">
+                <!-- Skills Section -->
+                <div class="my-10">
+                    <h2 class="text-2xl font-bold">Skills</h2>
+                    <div id="skills" class="space-y-4"></div>
+                </div>
 
-        <ul class="flex flex-col items-center p-4 space-y-4">
-            <li class="flex items-center justify-center w-full md:w-1/4"><a href="#home" class="capitalize text-slate-400 nav-link ">home</a></li>
-            <li class="flex items-center justify-center w-full md:w-1/4"><a href="#cathalog" class="capitalize text-slate-400 nav-link">catalog</a></li>
-            <li class="flex items-center justify-center w-full md:w-1/2"><a href="#about" class="capitalize text-slate-400 nav-link">about us</a></li>
-            <li class="flex items-center justify-center w-full md:w-1/4"><a href="#oder" class="capitalize text-slate-400 nav-link">order</a></li>
-     
-        </ul>
-    </div>
-    <div class="w-full h-24"></div>
-    <header class="z-30 w-full md:flex md:h-80" id="home">
-<div class="flex items-center h-full p-5 md:justify-center md:w-1/2">
-    <div class="">
-<div class="z-20 w-full my-2 font-bold text-teal-500 capitalize md:text-xl">
-    our new cathalog
-</div>
-<div class="font-bold uppercase md:text-3xl">
-    gabi & sons tailoring
-</div>
-<div class="my-2 text-sm text-slate-500 w-80">
-   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam non quos laudantium suscipit perferendis veniam placeat exercit
-</div>
-<div class="bg-teal-200 rounded-md relative w-[70%] h-10" >
-    
-    <div class="absolute w-full h-full bg-black rounded-md left-2 top-2">
-        <p class="p-1 font-bold text-center text-white uppercase md:text-xl">
-command now
-        </p>
-    </div>
-</div>
-</div>
-</div>
-<div class="items-center justify-center hidden h-full md:flex md:w-1/2">
-<img src="image/image/image__17_-removebg-preview.png" alt="error" class="h-full md:p-3" >
-<img src="image/imagehomme/i__9_-removebg-preview.png" alt="error" class="h-full md:p-3" >
-<img src="image/image/image__48_-removebg-preview.png" alt="error" class="h-full md:p-3" >
+                <!-- Personal Skills Section -->
+                <div class="my-10">
+                    <h2 class="text-2xl font-bold">Personal Skills</h2>
+                    <div id="personal-skills" class="space-y-4"></div>
+                </div>
+            </div>
 
-</div>
-    </header>
+            <!-- Right Section: Contact, Education, Experience -->
+            <div class="w-full md:w-[60%] p-5">
+                <!-- Contact Details -->
+                <div class="my-10">
+                    <h2 class="text-2xl font-bold">Contact Details</h2>
+                    <div id="contact-details" class="space-y-4"></div>
+                </div>
 
-    <main class="w-full pt-10 ">
-        <section id="order">
-            <!-- Contenu de la section Order -->
-            <div id="form-container" class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-gray-900 bg-opacity-50">
-                <form class="p-5 bg-white rounded">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" class="block w-full mb-4">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" class="block w-full mb-4">
-                    <label for="phone">Phone:</label>
-                    <input type="text" id="phone" name="phone" class="block w-full mb-4">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" class="block w-full mb-4">
-                    <button type="submit" class="px-4 py-2 text-white bg-teal-500 rounded">Submit</button>
-                    <button type="button" id="close-form" class="px-4 py-2 text-white bg-red-500 rounded">Cancel</button>
-                </form>
+                <!-- Education Section -->
+                <div class="my-10">
+                    <h2 class="text-2xl font-bold">Education</h2>
+                    <div id="education" class="space-y-4"></div>
+                </div>
+
+                <!-- Work Experience Section -->
+                <div class="my-10">
+                    <h2 class="text-2xl font-bold">Work Experience</h2>
+                    <div id="work-experience" class="space-y-4"></div>
+                </div>
+
+                <!-- Interests Section -->
+                <div class="my-10">
+                    <h2 class="text-2xl font-bold">Interests</h2>
+                    <div id="interests" class="flex flex-wrap gap-5">
+                        <!-- Interest items will go here -->
+                    </div>
+                </div>
             </div>
         </section>
-<div class="w-full p-10 md:p-20 bg-slate-200" id="cathalog">
-    <div class="flex justify-center w-full font-bold text-teal-500">
-        our cathalog
-    </div>
-    <div class="flex justify-center w-full text-2xl font-bold uppercase text-slate-700">
-        popular wear
-    
-</div>
-<div class="items-center justify-center pt-10 md:flex md:w-full">
-<div class="grid md:w-[90%] md:grid-cols-3 md:gap-10 gap-5 ">
-    <div class="p-2 bg-white rounded-lg h-96" style="box-shadow: 1px 1px 15px black;">
-    <div class="flex items-center justify-center h-64 ">
-        <img src="image/image//image__54_-removebg-preview.png" alt="error" class="h-full">
-    </div>
-    <div class="flex items-center justify-center text-2xl uppercase">
-        kaba
-    </div>
-    <div class="flex items-center justify-center font-black">
-        2500fcfa
-    </div>
-       <div class="flex items-center justify-center w-full">
-        <button class="w-[50%] p-1 font-bold text-white bg-teal-500 rounded-md buy-button">
-            buy
-        </button>
-       </div> 
-    </div>
-    <div class="p-2 bg-white rounded-lg h-96" style="box-shadow: 1px 1px 15px black;">
-        <div class="flex items-center justify-center h-64 ">
-            <img src="image/imagehomme/i__11_-removebg-preview.png" alt="error" class="h-full ">
-        </div>
-        <div class="flex items-center justify-center text-2xl uppercase">
-            kaba
-        </div>
-        <div class="flex items-center justify-center font-black">
-            2500fcfa
-        </div>
-           <div class="flex items-center justify-center w-full">
-            <button class="w-[50%] p-1 font-bold text-white bg-teal-500 rounded-md buy-button">
-                buy
-            </button>
-           </div> 
-        </div>
-        <div class="p-2 bg-white rounded-lg h-96" style="box-shadow: 1px 1px 15px black;">
-            <div class="flex items-center justify-center h-64 ">
-                <img src="image/image/image__7_-removebg-preview.png" alt="error" class="h-full">
-            </div>
-            <div class="flex items-center justify-center text-2xl uppercase">
-                kaba
-            </div>
-            <div class="flex items-center justify-center font-black">
-                2500fcfa
-            </div>
-               <div class="flex items-center justify-center w-full">
-                <button class="w-[50%] p-1 font-bold text-white bg-teal-500 rounded-md buy-button">
-                    buy
-                </button>
-               </div> 
-            </div>
-            <div class="p-2 bg-white rounded-lg h-96" style="box-shadow: 1px 1px 15px black;">
-                <div class="flex items-center justify-center h-64 ">
-                    <img src="image/imagehomme/i__1_-removebg-preview.png" alt="error" class="h-full">
-                </div>
-                <div class="flex items-center justify-center text-2xl uppercase">
-                    kaba
-                </div>
-                <div class="flex items-center justify-center font-black">
-                    2500fcfa
-                </div>
-                   <div class="flex items-center justify-center w-full">
-                    <button class="w-[50%] p-1 font-bold text-white bg-teal-500 rounded-md buy-button">
-                        buy
-                    </button>
-                   </div> 
-                </div>
-                <div class="p-2 bg-white rounded-lg h-96" style="box-shadow: 1px 1px 15px black;">
-                    <div class="flex items-center justify-center h-64 ">
-                        <img src="image/image/image__29_-removebg-preview.png" alt="error" class="h-full">
-                    </div>
-                    <div class="flex items-center justify-center text-2xl uppercase">
-                        kaba
-                    </div>
-                    <div class="flex items-center justify-center font-black">
-                        2500fcfa
-                    </div>
-                       <div class="flex items-center justify-center w-full">
-                        <button class="w-[50%] p-1 font-bold text-white bg-teal-500 rounded-md buy-button">
-                            buy
-                        </button>
-                       </div> 
-                    </div>
-                    <div class="p-2 bg-white rounded-lg h-96" style="box-shadow: 1px 1px 15px black;">
-                        <div class="flex items-center justify-center h-64 ">
-                            <img src="image/imagehomme/i__3_-removebg-preview.png" alt="error" class="h-full">
-                        </div>
-                        <div class="flex items-center justify-center text-2xl uppercase">
-                            kaba
-                        </div>
-                        <div class="flex items-center justify-center font-black">
-                            2500fcfa
-                        </div>
-                           <div class="flex items-center justify-center w-full">
-                            <button class="w-[50%] p-1 font-bold text-white bg-teal-500 rounded-md buy-button">
-                                buy
-                            </button>
-                           </div> 
-                        </div>
-</div>
-</div>
-
-</div>
-
-<div class="w-full pt-10">
-    <div class="w-full ">
-        <div class="flex justify-center w-full" id="about">
-            <p class="text-xl font-bold text-teal-400">about us</p>
-        </div>
-        <div class="flex justify-center w-full">
-            <p class="text-2xl font-bold text-slate-700">why choose us ?</p>
-            
-        </div>
-    </div>
-    <div class="w-full pt-10 md:flex h-80">
-        <div class="flex justify-center h-full md:w-1/2 ">
-            <img src="image/image/image (74).jpg" alt="error" class="h-full">
-        </div>
-        <div class="p-5 md:w-1/2">
-            <div class="">
-                <p class="font-bold uppercase md:text-4xl text-slate-700">best wear in the world</p>
-            </div>
-            <div class="w-full">
-                <p class=" text-slate-600">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias molestiae odio optio dicta sequi adipisci. Dolor deserunt asperiores nemo quis voluptate odit, ullam inventore quo distinctio itaque iure rem vero.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, consequatur quasi doloribus modi, laborum quaerat, eaque placeat numquam laudantium itaque eligendi eius alias dolorum porro reiciendis velit illum laboriosam tenetur!
-                </p>
-           <button class="w-40 p-1 font-bold text-white bg-teal-400 rounded-md md:mt-10">
-           
-learn more
-         </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="pt-48 md:pt-0">
-    <div class="mt-28">
-        <div class="flex justify-center w-full">
-            <p class="text-xl font-bold text-teal-400">comment</p>
-        </div>
-        <div class="flex justify-center w-full">
-            <p class="font-bold md:text-2xl text-slate-700">What People this about us</p>
-            
-        </div>
-    </div>
-    <div class="w-full grid-cols-3 py-10 md:p-5 md:grid place-items-center">
-        <div class="p-2 border rounded-lg w-60 border-slate-300 md:w-80">
-            <div class="">
-                <div class="flex">
-                    <div class="flex items-center justify-center w-10 h-10 bg-teal-400 rounded-full">
-                        <img src="image/icons/person.svg" alt="error" class="bg-white rounded-full w-9 h-9">
-                    </div>
-                <div class="flex items-center justify-center pl-10 font-bold text-slate-700 w-60">elaijah mikaelson</div>
-
-                </div>
-            </div>
-            <div class="w-full p-2 text-sm text-slate-500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis illo architecto amet illum ducimus ut animi delectus unde voluptatibus repudiandae reprehenderit dolore, corrupti voluptas officia rerum dolorem quis autem?
-            </div>
-        </div>
-        <div class="p-2 my-8 border rounded-lg border-slate-300 md:w-80 w-60">
-            <div class="">
-                <div class="flex">
-                    <div class="flex items-center justify-center w-10 h-10 bg-teal-400 rounded-full">
-                        <img src="image/icons/person.svg" alt="error" class="bg-white rounded-full w-9 h-9">
-                    </div>
-                <div class="flex items-center justify-center pl-10 font-bold text-slate-700 w-60">elaijah mikaelson</div>
-
-                </div>
-            </div>
-            <div class="w-full p-2 text-sm text-slate-500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis illo architecto amet illum ducimus ut animi delectus unde voluptatibus repudiandae reprehenderit dolore, corrupti voluptas officia rerum dolorem quis autem?
-            </div>
-        </div>
-        <div class="p-2 border rounded-lg border-slate-300 md:w-80 w-60">
-            <div class="">
-                <div class="flex">
-                    <div class="flex items-center justify-center w-10 h-10 bg-teal-400 rounded-full">
-                        <img src="image/icons/person.svg" alt="error" class="bg-white rounded-full w-9 h-9">
-                    </div>
-                <div class="flex items-center justify-center pl-10 font-bold text-slate-700 w-60">elaijah mikaelson</div>
-
-                </div>
-            </div>
-            <div class="w-full p-2 text-sm text-slate-500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis illo architecto amet illum ducimus ut animi delectus unde voluptatibus repudiandae reprehenderit dolore, corrupti voluptas officia rerum dolorem quis autem?
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="" id="oder">
-    <div class="mt-28">
-        <div class="flex justify-center w-full" >
-            <p class="text-xl font-bold text-teal-400">command</p>
-        </div>
-        <div class="flex justify-center w-full">
-            <p class="font-bold md:text-2xl text-slate-700">fill this form to make a command</p>
-            
-        </div>
-    </div>
-    <div class="flex items-center justify-center w-full">
-<form action="" class="md:w-[25%] bg-slate-200 p-5 mt-5 rounded-md">
-    <div class="" >
-        <div class="pt-2 pb-2 font-bold capitalize">
-            <label for="nom">your name</label>
-            
-        </div>
-        <div class="w-full ">
-            <input type="text" name="nom" id="nom" class="w-full p-2 outline-none ring-0 ring-slate-200 focus:ring-1 focus:ring-teal-200">
-        </div>
-    </div>
-    <div class="">
-        <div class="pt-2 pb-2 font-bold capitalize">
-            <label for="email">your email</label>
-            
-        </div>
-        <div class="w-full ">
-            <input type="email" name="email" id="email" class="w-full p-2 outline-none ring-0 ring-slate-200 focus:ring-1 focus:ring-teal-200">
-        </div>
-    </div>
-    <div class="">
-        <div class="pt-2 pb-2 font-bold capitalize">
-            <label for="number">your number</label>
-            
-        </div>
-        <div class="w-full ">
-            <input type="number" name="number" id="number" class="w-full p-2 outline-none ring-0 ring-slate-200 focus:ring-1 focus:ring-teal-200">
-        </div>
-    </div>
-    <div class="">
-        <div class="pt-2 pb-2 font-bold capitalize">
-            <label for="command" >your command date</label>
-            
-        </div>
-        <div class="w-full ">
-            <input type="date" name="command" id="command" class="w-full p-2 outline-none ring-0 ring-slate-200 focus:ring-1 focus:ring-teal-200">
-        </div>
-    </div>
-    <div class="w-full pt-8">
-        <button class="w-full p-1 font-bold text-white bg-teal-600">
-make the command
-        </button>    
-    </div>
-</form>
-    </div>
-</div>
     </main>
 
-
-    <footer class="w-full mt-20 md:p-5 bg-slate-200">
-<div class="grid w-full grid-cols-2 p-2 md:grid-cols-4 place-items-center md:p-0">
-<div class="w-60">
-    <div class="flex items-center justify-center w-full">
-        <div class="flex items-center justify-center w-10 h-10 bg-teal-500 rounded-full">
-            <img src="clock.png" alt="error" class="w-8 h-8">
-        </div>
-    </div>
-    <div class="w-full text-xl font-black text-center capitalize">ouverture</div>
-    <div class="w-full text-sm text-center">de lundi a samedi</div>
-    <div class="w-full text-sm text-center">de 07h00 a 22h30</div>
-</div>
-<div class="w-60">
-    <div class="flex items-center justify-center w-full">
-        <div class="flex items-center justify-center w-10 h-10 bg-teal-500 rounded-full">
-            <img src="pin.png" alt="error" class="w-8 h-8">
-        </div>
-    </div>
-    <div class="w-full text-xl font-black text-center capitalize">Adresse</div>
-    <div class="w-full text-sm text-center">Douala-bonamoussadi</div>
-    <div class="w-full text-sm text-center">ecole les marseillaires</div>
-</div>
-<div class="w-60">
-    <div class="flex items-center justify-center w-full">
-        <div class="flex items-center justify-center w-10 h-10 bg-teal-500 rounded-full">
-            <img src="email.png" alt="error" class="w-8 h-8">
-        </div>
-    </div>
-    <div class="w-full text-xl font-black text-center capitalize">email</div>
-    <div class="w-full text-sm text-center">ngomgabi@gmail.com</div>
-    <div class="w-full text-sm text-center">tailor@gmail.com</div>
-</div>
-<div class="w-60">
-    <div class="flex items-center justify-center w-full">
-        <div class="flex items-center justify-center w-10 h-10 bg-teal-500 rounded-full">
-            <img src="call.png" alt="error" class="w-8 h-8">
-        </div>
-    </div>
-    <div class="w-full text-xl font-black text-center capitalize">numbers</div>
-    <div class="w-full text-sm text-center">677760283</div>
-    <div class="w-full text-sm text-center">653539102</div>
-</div>
-</div>
-<div class="flex items-center justify-center w-full pt-5">
-    <div class="w-[90%] h-[3px] bg-slate-400"></div>
-</div>
-<div class="flex items-center justify-center w-full pt-5 text-sm font-bold">
- <p>&copy;2024 Realise par <span class="text-teal-300">Tang</span> </p>
- <p>| Tous les droits sont reserve</p>
-</div>
-    </footer>
-    <script src="module.js">
-
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
