@@ -1,3 +1,68 @@
+const translations = {
+    en: {
+        welcome: "Welcome to CV Builder",
+        skills: "Skills",
+        personalSkills: "Personal Skills",
+        contactDetails: "Contact Details",
+        phone: "Phone",
+        mail: "Mail",
+        address: "Address",
+        education: "Education",
+        workExperience: "Work Experience",
+        interests: "Interests"
+    },
+    fr: {
+        welcome: "Bienvenue dans le Créateur de CV",
+        skills: "Compétences",
+        personalSkills: "Compétences Personnelles",
+        contactDetails: "Coordonnées",
+        phone: "Téléphone",
+        mail: "Courriel",
+        address: "Adresse",
+        education: "Éducation",
+        workExperience: "Expérience Professionnelle",
+        interests: "Intérêts"
+    },
+    es: {
+        welcome: "Bienvenido a Constructor de CV",
+        skills: "Habilidades",
+        personalSkills: "Habilidades Personales",
+        contactDetails: "Detalles de Contacto",
+        phone: "Teléfono",
+        mail: "Correo",
+        address: "Dirección",
+        education: "Educación",
+        workExperience: "Experiencia Laboral",
+        interests: "Intereses"
+    },
+    de: {
+        welcome: "Willkommen beim Lebenslauf-Generator",
+        skills: "Fähigkeiten",
+        personalSkills: "Persönliche Fähigkeiten",
+        contactDetails: "Kontaktdaten",
+        phone: "Telefon",
+        mail: "E-Mail",
+        address: "Adresse",
+        education: "Bildung",
+        workExperience: "Berufserfahrung",
+        interests: "Interessen"
+    }
+};
+
+document.getElementById('languageSelect').addEventListener('change', (event) => {
+    const lang = event.target.value;
+    const t = translations[lang];
+    document.getElementById('welcome').innerHTML = t.welcome;
+    document.querySelectorAll('.skills').forEach(el => el.textContent = t.skills);
+    document.querySelectorAll('.personalSkills').forEach(el => el.textContent = t.personalSkills);
+    document.querySelectorAll('.contactDetails').forEach(el => el.textContent = t.contactDetails);
+    // Add similar code for other elements as per your structure
+});
+
+
+
+
+
 document.getElementById('addSkill').addEventListener('click', function () {
     const container = document.getElementById('skillsContainer');
     const skillInput = document.createElement('div');

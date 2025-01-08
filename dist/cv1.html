@@ -13,12 +13,24 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body class="min-h-screen font-sans bg-gradient-to-br from-blue-100 to-indigo-300">
+    
     <header class="p-5 text-center text-white bg-indigo-700">
         <h1 class="text-4xl font-bold">CV Builder</h1>
         <p class="mt-2">Créez votre CV professionnel rapidement et facilement</p>
     </header>
     <main class="max-w-5xl p-10 mx-auto mt-8 bg-white rounded-lg shadow-lg">
         <form id="cvForm" class="space-y-6">
+                        <!-- Section: language -->
+
+            <section class="w-full ">
+            <label for="languageSelect" class="font-extrabold text-lg text-blue-500">Choose Language:</label>
+        <select id="languageSelect" class="p-2 border w-full">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </section>
             <!-- Section: Personal Information -->
             <section>
                 <h2 class="text-2xl font-semibold text-indigo-600">Informations Personnelles</h2>
