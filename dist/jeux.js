@@ -11,9 +11,10 @@ let interval;
 let currentTimeForLevel = {1: 60, 2: 50, 3: 40};  // Garder le temps par niveau
 
 // Copies de listes pour utilisation unique des mots
-let wordsCopy = [...words];
-let phrasesCopy = [...phrases];
-let paragraphsCopy = [...paragraphs];
+let wordsCopy = ["chat", "chien", "soleil", "ordinateur", "livre", "papillon", "maison", "voiture", "plage", "ciel", "nuage", "arbre"];
+let phrasesCopy = ["Le soleil brille", "Un chat joue dans le jardin", "Un ordinateur puissant", "La pluie tombe", "Un oiseau chante"];
+let paragraphsCopy = ["La vie est belle quand on apprend à taper rapidement sur un clavier. C'est un excellent moyen de s'améliorer et de renforcer sa concentration.",
+                  "Apprendre à taper vite n'est pas seulement utile pour la productivité, mais aussi pour s'amuser en jouant à des jeux de type rapide sur des claviers modernes."];
 
 // Total des mots, phrases et paragraphes
 let totalPossibleWords = {
@@ -30,9 +31,10 @@ function shuffleArray(array) {
 }
 
 function shuffleAndResetLists() {
-    wordsCopy = [...words];
-    phrasesCopy = [...phrases];
-    paragraphsCopy = [...paragraphs];
+    wordsCopy = ["chat", "chien", "soleil", "ordinateur", "livre", "papillon", "maison", "voiture", "plage", "ciel", "nuage", "arbre"];
+    phrasesCopy = ["Le soleil brille", "Un chat joue dans le jardin", "Un ordinateur puissant", "La pluie tombe", "Un oiseau chante"];
+    paragraphsCopy = ["La vie est belle quand on apprend à taper rapidement sur un clavier. C'est un excellent moyen de s'améliorer et de renforcer sa concentration.",
+                  "Apprendre à taper vite n'est pas seulement utile pour la productivité, mais aussi pour s'amuser en jouant à des jeux de type rapide sur des claviers modernes."];
     shuffleArray(wordsCopy);
     shuffleArray(phrasesCopy);
     shuffleArray(paragraphsCopy);
