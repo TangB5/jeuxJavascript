@@ -192,3 +192,24 @@ function toggleTheme() {
     body.classList.toggle('night-mode');
     body.classList.toggle('day-mode');
 }
+window.addEventListener('DOMContentLoaded', () => {
+    const aboutSection = document.querySelector('.about');
+    const gameContainer = document.querySelector('.container');
+    const startButton = document.createElement('button');
+    startButton.textContent = "Aller au jeu";
+    startButton.className = "md:absolute px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-800 right-5 md:top-[90%]";
+    aboutSection.appendChild(startButton);
+
+    startButton.addEventListener('click', () => {
+        aboutSection.classList.add('hidden');
+        gameContainer.classList.add('fade-in');
+        gameContainer.classList.remove('hidden');
+    });
+
+    document.getElementById('input-box').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();  // Empêche le comportement par défaut
+            validateAnswer();    // Valide la réponse
+        }
+    });
+});
