@@ -10,7 +10,7 @@
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         }
     </style>
-    <link rel="stylesheet" href="output.css">
+    
 </head>
 <body class="min-h-screen font-sans bg-gradient-to-br from-blue-100 to-indigo-300">
     
@@ -23,8 +23,8 @@
                         <!-- Section: language -->
 
             <section class="w-full ">
-            <label for="languageSelect" class="font-extrabold text-lg text-blue-500">Choose Language:</label>
-        <select id="languageSelect" class="p-2 border w-full">
+            <label for="languageSelect" class="text-lg font-extrabold text-blue-500">Choose Language:</label>
+        <select id="languageSelect" class="w-full p-2 border">
             <option value="en">English</option>
             <option value="fr">Français</option>
             <option value="es">Español</option>
@@ -56,14 +56,19 @@
                         <input type="text" id="address" class="w-full p-3 border rounded-lg" placeholder="Votre adresse">
                     </div>
                 </div>
+                <div>
+                    <label for="profilePicture" class="block font-medium text-gray-700">Photo de Profil</label>
+                    <input type="file" id="profilePicture" class="w-full p-3 border rounded-lg" accept="image/*">
+                </div>
+                
             </section>
             <!-- Section: EDUCATION -->
             <section>
                 <h2 class="text-2xl font-semibold text-indigo-600">EDUCATION</h2>
-                <div id="educationContainer" class="space-y-4">
-                    <div class="flex items-center space-x-4">
-                        <input type="text" class="flex-1 p-2 border rounded-lg" placeholder="diplome">
-                        <input type="text" class="flex-1 p-2 border rounded-lg" placeholder="cours/ecole">
+                <div id="educationContainer" class="md:space-y-4">
+                    <div class="items-center block md:space-x-4 md:flex">
+                        <input type="text" class="p-2 border rounded-lg md:flex-1 " placeholder="diplome">
+                        <input type="text" class="p-2 my-6 border rounded-lg md:flex-1 md:my-0" placeholder="cours/ecole">
                         <input type="text" class="w-40 p-2 border rounded-lg" placeholder="Année">
                     </div>
                 </div>
@@ -95,14 +100,28 @@
             <section>
                 <h2 class="text-2xl font-semibold text-indigo-600">Expérience Professionnelle</h2>
                 <div id="experienceContainer" class="space-y-4">
-                    <div class="flex items-center space-x-4">
+                    <div class="items-center md:space-x-4 md:flex">
                         <input type="text" class="flex-1 p-2 border rounded-lg" placeholder="Titre du poste">
-                        <input type="text" class="flex-1 p-2 border rounded-lg" placeholder="Entreprise">
+                        <input type="text" class="flex-1 p-2 my-6 border rounded-lg md:my-0" placeholder="Entreprise">
                         <input type="text" class="w-40 p-2 border rounded-lg" placeholder="Année">
+                        <button type="button" class="text-red-500 removeExperience">Supprimer</button>
                     </div>
                 </div>
                 <button type="button" id="addExperience" class="mt-2 text-indigo-500">Ajouter une expérience</button>
             </section>
+            
+            
+             <!-- Section: centre d'interet -->
+             <section>
+                <h2 class="text-2xl font-semibold text-indigo-600">centre d'interet</h2>
+                <div id="interessContainer" class="">
+                    <div class="">
+                        <input type="text" class="w-full p-2 border rounded-lg" placeholder="centre d'interet">
+                </div>
+                </div>
+                <button type="button" id="addInteress" class="mt-2 text-indigo-500">Ajouter un centre d'interet</button>
+            </section>
+            
             <!-- Section: Submit -->
             <div class="text-center">
                 <button type="submit" class="px-6 py-2 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">Générer le CV</button>
@@ -112,7 +131,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="app.js">
+    <script src="cv1.js">
         
 
     </script>

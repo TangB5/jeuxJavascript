@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cv builder</title>
     <link rel="stylesheet" href="output.css">
+    <script defer src="index.js"></script>
     <style>
         .hexagon {
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -33,83 +34,28 @@
               <div class="absolute w-[200px] h-[200px]  inset-0 hexagon border-4 border-red-500 bg-blue-500 left-[24.5%] top-[26.5%] ">
                     
                 <!-- Hexagon Image -->
-                <img src="image.jpg" alt="Hexagon Image" class="object-cover w-full h-full hexagon">
+                <img id="profileImg"  class="object-cover w-full h-full hexagon">
             </div>
        </div>
         <div class="w-full ">
-                <div class="w-full text-4xl font-bold text-center nom">home</div>
-                <div class="w-full text-4xl text-center prenom">charle</div>
+                <div class="w-full text-4xl font-bold text-center nom" id="cvName">home</div>
+                <div class="w-full text-4xl text-center prenom" id="cvSecondName">charle</div>
             </div>
             <div class="p-10">
-<div class="flex-col w-full space-y-4 ">
-    <div class="flex items-center justify-between w-full mb-10">
-        <div class="flex items-center">
-            <div class="w-[40px] h-[40px] hexagon bg-black"></div>
-            <div class="text-2xl uppercase">Skills</div>
-        </div>
-        <div class="bg-black w-[60%] h-1"></div>
-    </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">adobe Photoshop</div>
-<div class="">9.5<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[90%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">adobe Photoshop</div>
-<div class="">9<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[90%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">adobe Illustrator</div>
-<div class="">8<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[80%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">adobe after Effects</div>
-<div class="">7.5<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[75%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">adobe indesign</div>
-<div class="">5<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[50%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">html/css</div>
-<div class="">9.5<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[90%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
-</div>
+                <div class="flex-col w-full space-y-4">
+                    <div class="flex items-center justify-between w-full mb-10">
+                        <div class="flex items-center">
+                            <div class="w-[40px] h-[40px] hexagon bg-slate-500 flex justify-center items-center">
+                                <img src="icons/rocket.svg" alt="error" class="w-6 h-6">
+
+                            </div>
+                            <div class="text-2xl uppercase">Skills</div>
+                        </div>
+                        <div class="bg-black w-[60%] h-1"></div>
+                    </div>
+                    <div id="cvSkills"></div> <!-- Conteneur des compétences -->
+                </div>
+                
 
 
 
@@ -117,51 +63,16 @@
 <div class="flex-col w-full space-y-4 ">
     <div class="flex items-center justify-between w-full my-10">
         <div class="flex items-center">
-            <div class="w-[40px] h-[40px] hexagon bg-black"></div>
+            <div class="w-[40px] h-[40px] hexagon bg-slate-500 flex justify-center items-center">
+                <img src="icons/ribbon.svg" alt="error" class="w-6 h-6">
+
+            </div>
             <div class="text-2xl uppercase">personal Skills</div>
         </div>
         <div class="bg-black w-[60%] h-1"></div>
     </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">Friendly</div>
-<div class="">10<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[100%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">Optimistic</div>
-<div class="">10<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[100%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">Creative</div>
-<div class="">10<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[100%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
-    <div class="w-full">
-        <div class="flex justify-between w-full">
-<div class="font-bold capitalize">Funny</div>
-<div class="">10<span class="text-slate-400">/10</span></div>
-        </div>
-        <div class="w-full h-2 bg-slate-500">
-            <div class="w-[100%] bg-blue-500 h-full"></div>
-            
-        </div>
-    </div>
+    <div id="cvPersonalSkills"></div> <!-- Conteneur des compétences -->
+                </div>
    
 </div>
          </div>      
@@ -175,26 +86,35 @@
                 <div class="w-full">
                 <div class="flex items-center w-full my-10">
                     <div class="flex items-center">
-                        <div class="w-[40px] h-[40px] hexagon bg-black"></div>
+                        <div class="w-[40px] h-[40px] hexagon bg-slate-500 flex justify-center items-center">
+                             <img src="icons/phone-portrait.svg" alt="error" class="w-6 h-6">
+                        </div>
                         <div class="text-3xl uppercase">contact details</div>
                     </div>
                     <div class="bg-black w-[80%] h-1"></div>
                 </div>
                 <div class="flex-col ml-10 space-y-4">
                 <div class="flex items-center w-full space-x-4 ">
-                    <div class="hexagon w-[30px] h-[30px] bg-black"></div>
+                    <div class="hexagon w-[30px] h-[30px] bg-slate-500 flex justify-center items-center">
+                        <img src="icons/call.svg" alt="error" class="w-4 h-4 ">
+                    </div>
                     <div class="">Phone</div>
-                    <div class="font-bold">653534672</div>
+                    <div class="font-bold" id="cvPhone"></div>
                 </div>
                 <div class="flex items-center w-full space-x-4">
-                    <div class="hexagon w-[30px] h-[30px] bg-black"></div>
+                    <div class="hexagon w-[30px] h-[30px] bg-slate-500 flex justify-center items-center">
+                        <img src="icons/mail.svg" alt="error" class="w-4 h-4">
+                    </div>
                     <div class="">mail</div>
-                    <div class="font-bold">monmail@gmail.com</div>
+                    <div class="font-bold" id="cvEmail"></div>
                 </div>
                 <div class="flex items-center w-full space-x-4">
-                    <div class="hexagon w-[30px] h-[30px] bg-black"></div>
-                    <div class="">adresse</div>
-                    <div class="font-bold">massachousette</div>
+                    <div class="hexagon w-[30px] h-[30px] bg-slate-500 flex justify-center items-center">
+                        <img src="icons/location.svg" alt="error" class="w-4 h-4">
+
+                    </div>
+                    <div class="" >adresse</div>
+                    <div class="font-bold" id="cvAddress"></div>
                 </div>
                 </div>
                 </div>
@@ -202,71 +122,54 @@
 
                 <div class="w-full">
                     <div class="flex items-center justify-between w-full my-10">
-                        <div class="flex items-center ">
-                            <div class="w-[40px] h-[40px] hexagon bg-black"></div>
+                        <div class="flex items-center">
+                            <div class="w-[40px] h-[40px] hexagon bg-slate-500 flex justify-center items-center">
+                                <img src="icons/school.svg" alt="error" class="w-6 h-6">
+
+                            </div>
                             <div class="text-3xl uppercase">Education</div>
                         </div>
                         <div class="bg-black w-[65%] h-1"></div>
                     </div>
-                   <div class="ml-10">
-                    <div class="text-xl font-bold uppercase">massachousette University <span class="font-normal text-slate-500">/1990</span></div>
-                    <div class="text-slate-500">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nisi ipsa voluptate earum?
-                         Natus fugit voluptatem dolor assumenda id,
-                         libero at quibusdam fugiat sunt eligendi! Error, atque. Delectus, omnis obcaecati?
-                    </div>   
+                    <div id="cvEducation"></div> <!-- Conteneur dynamique pour les informations -->
                 </div>
-                    </div>
+                
 
 
 
                     <div class="w-full">
                         <div class="flex items-center justify-between w-full my-10">
                             <div class="flex items-center ">
-                                <div class="w-[40px] h-[40px] hexagon bg-black"></div>
+                                <div class="w-[40px] h-[40px] hexagon bg-slate-500 flex justify-center items-center">
+                                    <img src="icons/construct.svg" alt="error" class="w-6 h-6">
+
+                                </div>
                                 <div class="text-3xl uppercase">work Experience</div>
                             </div>
                             <div class="bg-black w-[65%] h-1"></div>
                         </div>
-                       <div class="flex-col ml-10 space-y-5">
-                        <div class="text-xl font-bold uppercase">freelance Designer <span class="font-normal text-slate-500">/1999-present</span></div>
-                        <div class="text-slate-500">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nisi ipsa voluptate earum?
-                             Natus fugit voluptatem dolor assumenda id,
-                             libero at quibusdam fugiat sunt eligendi! Error, atque. Delectus, omnis obcaecati?
-                        </div>   
-                    
-                    <div class="text-xl font-bold uppercase">web-master <span class="font-normal text-slate-500">/2004-present</span></div>
-                        <div class="text-slate-500">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nisi ipsa voluptate earum?
-                             Natus fugit voluptatem dolor assumenda id,
-                             libero at quibusdam fugiat sunt eligendi! Error, atque. Delectus, omnis obcaecati?
-                        </div>   
-                   
-                    <div class="text-xl font-bold uppercase">security master<span class="font-normal text-slate-500">/2012-present</span></div>
-                        <div class="text-slate-500">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nisi ipsa voluptate earum?
-                             Natus fugit voluptatem dolor assumenda id,
-                             libero at quibusdam fugiat sunt eligendi! Error, atque. Delectus, omnis obcaecati?
-                        </div>   
-                    </div>
+
+
+                        <div id="cvExperience"></div> <!-- Conteneur dynamique pour les informations -->
+                </div>
+
                         </div>
+
+                        
                         <div class="w-full">
                             <div class="flex items-center justify-between w-full my-10">
-                                <div class="flex items-center ">
-                                    <div class="w-[40px] h-[40px] hexagon bg-black"></div>
+                                <div class="flex items-center">
+                                    <div class="w-[40px] h-[40px] hexagon bg-slate-500 flex justify-center items-center">
+                                        <img src="icons/heart.svg" alt="error" class="w-6 h-6">
+                                    </div>
                                     <div class="text-3xl uppercase">Interests</div>
                                 </div>
                                 <div class="bg-black w-[65%] h-1"></div>
                             </div>
-                           <div class="flex flex-wrap space-x-5">
-                        <div class="w-[100px] h-[100px] hexagon bg-blue-500  text-white flex items-center justify-center uppercase">robotic</div>
-                        <div class="w-[110px] h-[110px] hexagon bg-blue-500 text-white flex items-center justify-center uppercase">drawing</div>
-                        <div class="w-[120px] h-[120px] hexagon bg-blue-500 text-white flex items-center justify-center uppercase">programing</div>
-                        <div class="w-[90px] h-[90px] hexagon bg-blue-500 text-white flex items-center justify-center uppercase">traveling</div>
-                        <div class="w-[85px] h-[85px] hexagon bg-blue-500 text-white flex items-center justify-center uppercase">watching movies</div>
-                           </div>
-                            </div>
+                            <div id="cvInteress" class="flex flex-wrap space-x-5"></div> <!-- Conteneur dynamique -->
+                        </div>
+                        
+
             </div> 
                 
         </div>
@@ -274,7 +177,7 @@
 
     </section>
     </main>
-    <script src="app.js">
+    <script src="cv.js">
     
     </script>
 </body>
