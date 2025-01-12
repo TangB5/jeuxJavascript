@@ -1,4 +1,3 @@
-
 let currentLevel = 1;
 let completedLevels = { 1: false, 2: false, 3: false };
 let words = ["chat", "chien", "soleil", "ordinateur", "livre", "papillon", "maison", "voiture", "plage", "ciel", "nuage", "arbre"];
@@ -11,11 +10,25 @@ let time = 60;
 let interval;
 let currentTimeForLevel = {1: 60, 2: 50, 3: 40};  // Garder le temps par niveau
 
+// Copies de listes pour utilisation unique des mots
+let wordsCopy = [...words];
+let phrasesCopy = [...phrases];
+let paragraphsCopy = [...paragraphs];
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]]; // swap elements
     }
+}
+
+function shuffleAndResetLists() {
+    wordsCopy = [...words];
+    phrasesCopy = [...phrases];
+    paragraphsCopy = [...paragraphs];
+    shuffleArray(wordsCopy);
+    shuffleArray(phrasesCopy);
+    shuffleArray(paragraphsCopy);
 }
 
 function startGame(level) {
@@ -27,9 +40,9 @@ function startGame(level) {
     currentLevel = level;
     score = 0;
     totalWords = 0;
-    time = currentTimeForLevel[level];  // Réinitialiser le temps du niveau actuel
+    time = currentTimeForLevel[level];  
+    shuffleAndResetLists();  // Mélanger et réinitialiser les listes à chaque début de niveau
     document.getElementById('score').innerText = score;
-
     document.getElementById('level-select').classList.add('hidden');
     document.getElementById('game-container').classList.remove('hidden');
     document.getElementById('level-title').innerText = `Niveau ${level}`;
@@ -39,15 +52,15 @@ function startGame(level) {
 }
 
 function loadNextWord() {
-    const wordList = currentLevel === 1 ? words : currentLevel === 2 ? phrases : paragraphs;
-    shuffleArray(wordList);  // Mélanger la liste à chaque tour
+    const wordList = currentLevel === 1 ? wordsCopy : currentLevel === 2 ? phrasesCopy : paragraphsCopy;
 
-    if (totalWords >= wordList.length) {
-        endGame();  // Si tous les mots sont terminés avant la fin du temps
+    if (wordList.length === 0) {
+        endGame(); 
         return;
     }
 
-    document.getElementById('word-display').innerText = wordList[totalWords];
+    const nextWord = wordList.pop();  // Retirer le dernier mot pour éviter les répétitions
+    document.getElementById('word-display').innerText = nextWord;
     document.getElementById('input-box').value = '';
     document.getElementById('input-box').focus();
 }
@@ -57,11 +70,10 @@ function startTimer() {
         time--;
         document.getElementById('timer').innerText = time;
 
-        // Mise à jour de la barre de progression
         const progress = (currentTimeForLevel[currentLevel] - time) / currentTimeForLevel[currentLevel] * 100;
         document.getElementById('progress-bar').style.width = progress + '%';
 
-        if (time <= 0 || totalWords >= (currentLevel === 1 ? words.length : currentLevel === 2 ? phrases.length : paragraphs.length)) {
+        if (time <= 0 || (currentLevel === 1 && wordsCopy.length === 0) || (currentLevel === 2 && phrasesCopy.length === 0) || (currentLevel === 3 && paragraphsCopy.length === 0)) {
             clearInterval(interval);
             endGame();
         }
@@ -71,7 +83,7 @@ function startTimer() {
 function validateAnswer() {
     const input = document.getElementById('input-box').value.trim();
     const wordList = currentLevel === 1 ? words : currentLevel === 2 ? phrases : paragraphs;
-    const currentWord = wordList[totalWords];
+    const currentWord = document.getElementById('word-display').innerText;
 
     if (input === currentWord) score++;
     totalWords++;
@@ -88,12 +100,10 @@ function endGame() {
     const returnButton = document.getElementById('return-btn');
 
     nextButton.classList.toggle('hidden', !isLevelPassed);
-    returnButton.classList.toggle('hidden', currentLevel < 3);  // Le bouton Retour n'apparait qu'après le dernier niveau
+    returnButton.classList.toggle('hidden', currentLevel < 3); 
     replayButton.classList.remove('hidden');
 
     const message = `Score final : ${score}/${totalWords}<br>Précision : ${accuracy.toFixed(2)}%`;
-
-    // Appréciation basée sur la précision
     let appreciation = '';
     if (accuracy >= 90) {
         appreciation = "Bravo, excellent travail!";
@@ -115,14 +125,12 @@ function showModal(title, message, canProceed) {
 }
 
 function nextLevel() {
-    // Masquer la modale avant de commencer le niveau suivant
     document.getElementById('result-modal').style.display = 'none';
 
     if (currentLevel < 3) {
         completedLevels[currentLevel] = true;
         startGame(currentLevel + 1);
     } else {
-        // Si c'est le dernier niveau, afficher un message de partage
         showModal('Félicitations !', 'Vous avez terminé le jeu ! Partagez-le avec vos amis.', true);
     }
 }
@@ -133,13 +141,12 @@ function returnToHome() {
 }
 
 function resetGame() {
-    // Réinitialiser les valeurs sans changer de niveau
+    shuffleAndResetLists();
     score = 0;
     totalWords = 0;
-    time = currentTimeForLevel[currentLevel]; // Conserver le temps du niveau actuel
+    time = currentTimeForLevel[currentLevel]; 
     document.getElementById('score').innerText = score;
-
-    document.getElementById('result-modal').style.display = 'none';  // Masquer la modale
+    document.getElementById('result-modal').style.display = 'none';  
     loadNextWord();
     startTimer();
 }
@@ -167,6 +174,10 @@ function shareOnTwitter() {
     window.open(`https://twitter.com/intent/tweet?text=${text}${url}`, '_blank');
 }
 
-// Ajout de l'événement sur le bouton Valider
 document.getElementById('validate-btn').addEventListener('click', validateAnswer);
 
+function toggleTheme() {
+    const body = document.getElementById('theme');
+    body.classList.toggle('night-mode');
+    body.classList.toggle('day-mode');
+}
