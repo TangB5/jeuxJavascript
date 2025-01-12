@@ -165,7 +165,13 @@
                 <div id="progress-bar" class="absolute top-0 left-0 h-2 bg-green-500 rounded-full" style="width: 0%;"></div>
             </div>
             <input id="input-box" type="text" class="w-full p-4 mb-4 text-lg text-black rounded-lg shadow-sm" placeholder="Tapez ici..." autofocus>
-            <button id="validate-btn" class="px-6 py-3 font-bold text-white transition-transform transform bg-blue-500 rounded-lg shadow-md hover:bg-blue-700 hover:scale-105">Valider</button>
+            <div class="flex justify-center space-x-4">
+                <button id="validate-btn" class="px-6 py-3 font-bold text-white transition-transform transform bg-blue-500 rounded-lg shadow-md hover:bg-blue-700 hover:scale-105">Valider</button>
+                <button id="pause-resume-btn" class="px-6 py-3 font-bold text-white transition-transform transform bg-yellow-500 rounded-lg shadow-md hover:bg-yellow-700 hover:scale-105">Pause</button>
+            </div>
+            
+                        <!-- -->
+
             <p id="timer-display" class="mt-6 text-xl font-semibold text-center">Temps restant : <span id="timer">30</span> sec</p>
             <p id="score-display" class="mt-4 text-lg text-center">Score : <span id="score">0</span></p>
         </div>

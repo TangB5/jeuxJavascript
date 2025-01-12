@@ -75,6 +75,8 @@ function loadNextWord() {
 }
 
 function startTimer() {
+    
+
     interval = setInterval(() => {
         time--;
         document.getElementById('timer').innerText = time;
@@ -213,3 +215,32 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+let isPaused = false;
+// Assurez-vous que cette variable est définie
+
+document.getElementById('pause-resume-btn').addEventListener('click', togglePause);
+
+function togglePause() {
+    const inputBox = document.getElementById('input-box');
+    const validateBtn = document.getElementById('validate-btn');
+    const pauseButton = document.getElementById('pause-resume-btn');
+
+    if (isPaused) {
+        startTimer();  // Assurez-vous que cette fonction est définie quelque part
+        inputBox.disabled = false;
+        validateBtn.disabled = false;
+        pauseButton.innerText = "Pause";
+        pauseButton.classList.remove('bg-green-500', 'hover:bg-green-700');
+        pauseButton.classList.add('bg-yellow-500', 'hover:bg-yellow-700');
+    } else {
+        clearInterval(interval);  // Assurez-vous que interval est utilisé correctement
+        inputBox.disabled = true;
+        validateBtn.disabled = true;
+        pauseButton.innerText = "Reprendre";
+        pauseButton.classList.remove('bg-yellow-500', 'hover:bg-yellow-700');
+        pauseButton.classList.add('bg-green-500', 'hover:bg-green-700');
+    }
+
+    isPaused = !isPaused;
+}
