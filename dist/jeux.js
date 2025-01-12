@@ -15,6 +15,13 @@ let wordsCopy = [...words];
 let phrasesCopy = [...phrases];
 let paragraphsCopy = [...paragraphs];
 
+// Total des mots, phrases et paragraphes
+let totalPossibleWords = {
+    1: words.length,
+    2: phrases.length,
+    3: paragraphs.length
+};
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -82,7 +89,6 @@ function startTimer() {
 
 function validateAnswer() {
     const input = document.getElementById('input-box').value.trim();
-    const wordList = currentLevel === 1 ? words : currentLevel === 2 ? phrases : paragraphs;
     const currentWord = document.getElementById('word-display').innerText;
 
     if (input === currentWord) score++;
@@ -103,7 +109,10 @@ function endGame() {
     returnButton.classList.toggle('hidden', currentLevel < 3); 
     replayButton.classList.remove('hidden');
 
-    const message = `Score final : ${score}/${totalWords}<br>Précision : ${accuracy.toFixed(2)}%`;
+    // Calculer le nombre total d'éléments pour le niveau actuel
+    const totalElementsForLevel = totalPossibleWords[currentLevel];
+    const message = `Score final : ${score}/${totalElementsForLevel}<br>Précision : ${accuracy.toFixed(2)}%`;
+
     let appreciation = '';
     if (accuracy >= 90) {
         appreciation = "Bravo, excellent travail!";
