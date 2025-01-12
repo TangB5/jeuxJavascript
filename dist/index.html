@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZERTYPE - Jeu de Typing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation de la barre de progression */
+        @keyframes progress-bar {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen text-white bg-gray-900">
+
+    <div class="container max-w-xl p-6 bg-gray-800 rounded shadow-md">
+        <h1 class="mb-4 text-3xl font-bold text-center">AZERTYPE</h1>
+
+        <div id="level-select" class="mb-4">
+            <h2 class="mb-2 text-xl">Choisissez un niveau :</h2>
+            <button onclick="startGame(1)" class="px-4 py-2 m-2 font-bold text-white transition-all bg-blue-500 rounded hover:bg-blue-700">Niveau 1</button>
+            <button onclick="startGame(2)" class="px-4 py-2 m-2 font-bold text-white transition-all bg-green-500 rounded hover:bg-green-700">Niveau 2</button>
+            <button onclick="startGame(3)" class="px-4 py-2 m-2 font-bold text-white transition-all bg-red-500 rounded hover:bg-red-700">Niveau 3</button>
+        </div>
+
+        <!-- Écran du jeu -->
+        <div id="game-container" class="hidden">
+            <h2 id="level-title" class="mb-4 text-2xl"></h2>
+            <p id="word-display" class="p-4 mb-4 text-lg text-center bg-gray-700 rounded"></p>
+
+            <!-- Barre de progression -->
+            <div class="relative w-full h-2 mb-4 bg-gray-600 rounded-full">
+                <div id="progress-bar" class="absolute top-0 left-0 h-2 bg-green-500 rounded-full" style="width: 0%;"></div>
+            </div>
+
+            <!-- Zone de saisie -->
+            <input id="input-box" type="text" class="w-full p-2 mb-4 text-black rounded" placeholder="Tapez ici..." autofocus>
+            <button id="validate-btn" class="px-4 py-2 font-bold text-white transition-all bg-blue-500 rounded hover:bg-blue-700">Valider</button>
+            <p id="timer-display" class="mt-4 text-lg">Temps restant : <span id="timer">30</span> sec</p>
+            <p id="score-display" class="mt-4">Score : <span id="score">0</span></p>
+        </div>
+
+        <!-- Résultats -->
+        <div id="result-container" class="hidden">
+            <h2 class="mb-4 text-2xl">Résultats</h2>
+            <p id="result-message"></p>
+            <button onclick="resetGame()" class="px-4 py-2 mt-4 font-bold text-white transition-all bg-blue-500 rounded hover:bg-blue-700">Rejouer</button>
+        </div>
+    </div>
+
+    <script src="jeux.js">
+        
+    </script>
+</body>
+</html>
